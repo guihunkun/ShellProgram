@@ -1,0 +1,46 @@
+#!/bin/bash
+
+x=1
+echo $x
+
+MATH=true
+export MATH=true
+echo $MATH
+
+root=`pwd`
+date=$(date)
+echo $root
+echo $date 
+
+
+echo 'array_start'
+array=(5 4 3 1 2)
+echo ${array[@]}
+for i  in  ${array[@]}; do
+  echo $i
+done
+echo 'array_end'
+
+
+if [[ 2 != 3 ]];then
+  echo "2 != 3"
+fi
+
+i=1
+sum=0
+while [[ $i -le 10 ]] 
+do
+  ((sum += i))
+  let i++
+done
+echo 'sum = '$sum
+
+
+#Method 1
+CURDIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd )
+echo $CURDIR
+
+#Method 2
+root=`pwd`
+echo $root
+
